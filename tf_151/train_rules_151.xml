@@ -97,7 +97,7 @@
     <configItem key="order_list_completed_order_array_length" value="15"/>
     <configItem key="order_list_completed_order_whether_use_new_ui" value="Y"/>
     
-    <configItem key="train_finder_core_version" value="2"/>
+    <configItem key="train_finder_core_version" value="1"/>
     <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_151/ika_core_151.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
@@ -193,7 +193,7 @@
     
     <configItem key="pur_is_user_strict_user_cert_num" value="Y"/>
     
-    <configItem key="pur_is_open_pur_pay_char" value="Y"/>
+    <configItem key="pur_is_open_pur_pay_char" value="N"/>
     <configItem key="pur_is_use_ika_open_close_pur_pay" value="Y"/>
     <configItem key="rand_code_is_use_rand_gif_randcode_img" value="Y"/>
     <configItem key="rand_code_is_open_auto_rand_gif_png_img_char" value="Y"/>
