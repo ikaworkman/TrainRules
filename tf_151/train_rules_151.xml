@@ -194,7 +194,7 @@
     <configItem key="pur_is_user_strict_user_cert_num" value="Y"/>
     
     <configItem key="pur_is_open_pur_pay_char" value="Y"/>
-    <configItem key="pur_is_use_ika_open_close_pur_pay" value="Y"/>
+    <configItem key="pur_is_use_ika_open_close_pur_pay" value="N"/>
     <configItem key="rand_code_is_use_rand_gif_randcode_img" value="Y"/>
     <configItem key="rand_code_is_open_auto_rand_gif_png_img_char" value="Y"/>
     <configItem key="ticket_detail_passenger_form_ticket_type_code_for_student" value="3"/>
