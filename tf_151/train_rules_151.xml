@@ -98,7 +98,7 @@
     <configItem key="order_list_completed_order_whether_use_new_ui" value="Y"/>
     
     <configItem key="train_finder_core_version" value="2"/>
-    <configItem key="train_finder_core_download_url" value="https://dl.dropboxusercontent.com/s/nr74bkyimdujeeg/ika_core_151.jar"/>
+    <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_151/ika_core_151.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
     <configItem key="order_list_completed_order_status_had_resign_order" value="改签票"/>
@@ -763,7 +763,6 @@
                 <rule type="string_to_string" order="string_remove" value="var beginTime = "></rule>
                 <rule type="string_to_string" order="string_remove" value=";"></rule>
             </parser>
-            
             <parser storageKey="res_submit_order_step_7_pay_order_sub_success_ticket_info">
                 <rule type="elements_to_string" order="select_element_data_all" value="script[xml:space=preserve]:not(script[type],script[id])"></rule>
                 <rule type="string_to_string" order="string_regex" value="var passangerTicketList = .*"></rule>
@@ -773,25 +772,11 @@
         </parserList>
         <result>
             <resultKey>action_submit_order_step_7_pay_order_sub_success</resultKey>
+            <nextActionList>
+                <next expResultKey="res_pay_tran_data" expectResultType="min_length" expectResultValue="20" nextActionKey="action_ika_statistics_submit"></next>
+            </nextActionList>
         </result>
     </action>
-    
-
-	<action key="action_submit_order" isDismissDialog="Y" resultType="elements" encoding="UTF-8">
-		<paramList>
-			<param name="uri" value="/otsweb/order/confirmPassengerAction.do"></param>
-			<param name="method" value="payOrder"></param>
-		</paramList>
-		<parserList>
-		</parserList>
-		<result>
-			<resultKey>action_submit_order</resultKey>
-            <nextActionList>
-                <next expResultKey="res_ticket_detail_order_info_value" expectResultType="array_length_max" expectResultValue="1" nextActionKey="action_refresh_ticket_detail_token"></next>
-                <next expectResultType="sys_else" nextActionKey="action_ika_statistics_submit"></next>
-            </nextActionList>
-		</result>
-	</action>
     <action key="action_ika_statistics_submit"  resultType="string" encoding="UTF-8">
         <paramList>
             <param name="new_main" value="http://trainfinder.ikamobile.cn"></param>
@@ -857,7 +842,6 @@
         </paramList>
         <parserList></parserList>
     </action>
-    
 </actionList>
 
 <!-- 订单提交成功界面 submitSuccess -->
@@ -1069,7 +1053,22 @@
         </parserList>
         <result>
             <resultKey>action_order_list_cancel_uncomplete_order</resultKey>
+            <nextActionList>
+                <next expResultKey="res_pay_uncomplete_order_list_step_1_status" expectResultType="equal" expectResultValue="true" nextActionKey="action_ika_statistics_cancel_order"></next>
+            </nextActionList>
         </result>
+    </action>
+    <action key="action_ika_statistics_cancel_order" resultType="string" encoding="UTF-8">
+        <paramList>
+            <param name="new_main" value="http://trainfinder.ikamobile.cn"></param>
+            <param name="uri" value="/trainfinder/order/cancel2"></param>
+            <param key="res_order_list_sequence_no" name="sequence_no"></param>
+            <param key="key_app_version_id" name="client_version"></param>
+            <param name="client_agent" value="Android"></param>
+            <param name="req_source" value="TrainFinder"></param>
+        </paramList>
+        <parserList>
+        </parserList>
     </action>
 
     <action key="action_order_list_resign_pay" isShowDialog="Y" resultType="elements" encoding="UTF-8">
@@ -1155,19 +1154,6 @@
         <result>
             <resultKey>action_order_list_resign_pay</resultKey>
         </result>
-    </action>
-
-    <action key="action_ika_statistics_cancel_order" resultType="string" encoding="UTF-8">
-        <paramList>
-            <param name="new_main" value="http://trainfinder.ikamobile.cn"></param>
-            <param name="uri" value="/trainfinder/order/cancel2"></param>
-            <param key="res_order_list_sequence_no" name="sequence_no"></param>
-            <param key="key_app_version_id" name="client_version"></param>
-            <param name="client_agent" value="Android"></param>
-            <param name="req_source" value="TrainFinder"></param>
-        </paramList>
-        <parserList>
-        </parserList>
     </action>
     <action key="action_order_list_cancel_resign_uncomplete_order" isShowDialog="Y" resultType="elements" encoding="UTF-8">
         <paramList>
