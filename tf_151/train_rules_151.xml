@@ -97,7 +97,7 @@
     <configItem key="order_list_completed_order_array_length" value="15"/>
     <configItem key="order_list_completed_order_whether_use_new_ui" value="Y"/>
     
-    <configItem key="train_finder_core_version" value="1"/>
+    <configItem key="train_finder_core_version" value="2"/>
     <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_151/ika_core_151.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
