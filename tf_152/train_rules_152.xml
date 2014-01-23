@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rules>
 <config>
-    <configItem key="ika_rule_version" value="152_asset"/>
+    <configItem key="ika_rule_version" value="152_github"/>
     
 	<configItem key="bank_list_to_show" value="03080000,01050000"/>
     <configItem key="bank_list_bank_code_of_cmb" value="03080000"/>
