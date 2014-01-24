@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data code="0">
-  <version>1</version>
+  <version>2</version>
   <ruleXmlUrl>https://raw.github.com/ikaworkman/TrainRules/master/tf_152/train_rules_152.xml</ruleXmlUrl>
   <!--<ruleXmlUrl>https://dl.dropboxusercontent.com/s/uvuqjqvvpzhqdeb/train_rules_152.xml</ruleXmlUrl>-->
 </data>
