@@ -16,7 +16,7 @@
     <configItem key="ticket_list_ticket_char_ticket_can_not_sale" value="*"/>
     <configItem key="ticket_list_ticket_max_day_limit" value="19"/>
     <configItem key="ticket_list_ticket_max_day_limit_for_student" value="19"/>
-    <configItem key="ticket_list_ticket_limit_day_for_student" value="2014,3,1"/>
+    <configItem key="ticket_list_ticket_limit_day_for_student" value="2014,3,31"/>
     <configItem key="ticket_list_ticket_which_action" value="1"/>
 
 	<configItem key="station_list_info" value="3,1,2,5,3,0"/>
