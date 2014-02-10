@@ -62,7 +62,7 @@
     <configItem key="ccb_pay_success_remain_info_contain" value="以下是您的支付信息"/>
     <configItem key="cmb_pay_success_remain_info_contain" value="一步操作步骤已经通过短信发送到您的手"/>
     
-    <configItem key="train_finder_core_version" value="2"/>
+    <configItem key="train_finder_core_version" value="1"/>
     <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_153/ika_core_153.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
