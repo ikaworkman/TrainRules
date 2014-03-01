@@ -62,7 +62,7 @@
     <configItem key="ccb_pay_success_remain_info_contain" value="以下是您的支付信息"/>
     <configItem key="cmb_pay_success_remain_info_contain" value="一步操作步骤已经通过短信发送到您的手"/>
     
-    <configItem key="train_finder_core_version" value="1"/>
+    <configItem key="train_finder_core_version" value="2"/>
     <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_153/ika_core_153.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
@@ -487,6 +487,50 @@
         </parserList>
         <result>
             <resultKey>action_ticket_detail_rand_code</resultKey>
+        </result>
+    </action>
+    
+    <action key="action_submit_order_step_1_a_check_real_passenger" isDismissDialog="N" resultType="string">
+        <paramList>
+            <param name="uri" value="/otn/passengers/realAdd"></param>
+            <param name="REPEAT_SUBMIT_TOKEN" key="res_ticket_detail_init_3_init_detail_page_submit_repeat_token"></param>
+            <param name="_json_att" value=""></param>
+            <param name="country_code" value="CN"></param>
+            <param name="passenger_id_type_code" key="key_ticket_detail_real_passenger_passenger_id_type_code"></param>
+            <param name="passenger_id_no" key="key_ticket_detail_real_passenger_passenger_id_no"></param>
+            <param name="passenger_name" key="key_ticket_detail_real_passenger_passenger_name"></param>
+            <param name="passenger_type" key="key_ticket_detail_real_passenger_passenger_type_code"></param>
+            
+        </paramList>
+        <parserList>
+            <parser storageKey="res_submit_order_step_1_a_check_real_passenger_result">
+            </parser>
+            <parser storageKey="res_submit_order_step_1_a_check_real_passenger_result_judge_if_need_delete">
+                <rule type="string_to_json"></rule>
+                <rule type="json_to_json" value="data"></rule>
+                <rule type="json_to_string" value="totalTimes"></rule>
+            </parser>
+        </parserList>
+        <result>
+            <resultKey>action_submit_order_step_1_a_check_real_passenger</resultKey>
+        </result>
+    </action>
+    <action key="action_submit_order_step_1_a_check_real_passenger_delete" isDismissDialog="N" resultType="string">
+        <paramList>
+            <param name="uri" value="/otn/passengers/delete"></param>
+            <param name="isUserSelf" value="N"></param>
+            <param name="passenger_id_type_code" key="key_ticket_detail_real_passenger_passenger_id_type_code"></param>
+            <param name="passenger_id_no" key="key_ticket_detail_real_passenger_passenger_id_no_for_delete"></param>
+            <param name="passenger_name" key="key_ticket_detail_real_passenger_passenger_name_for_delete"></param>
+
+            <param name="Referer" value="https://kyfw.12306.cn/otn/passengers/init"></param>
+        </paramList>
+        <parserList>
+            <parser storageKey="res_submit_order_step_1_a_check_real_passenger_delete_result">
+            </parser>
+        </parserList>
+        <result>
+            <resultKey>action_submit_order_step_1_a_check_real_passenger_delete</resultKey>
         </result>
     </action>
     <action key="action_submit_order_step_1_check_rand_code" isShowDialog="Y" resultType="string">
@@ -1377,6 +1421,26 @@
         </parserList>
         <result>
             <resultKey>action_resign_get_ticket_detail_step_2</resultKey>
+            <nextActionKey>action_ticket_detail_init_4_init_get_passenger_info</nextActionKey>
+        </result>
+    </action>
+    <action key="action_ticket_detail_init_4_init_get_passenger_info" isShowDialog="Y" resultType="string">
+        <paramList>
+            <param name="uri" value="/otn/confirmPassenger/getPassengerDTOs"></param>
+            <param key="res_ticket_detail_init_3_init_detail_page_submit_repeat_token" name="REPEAT_SUBMIT_TOKEN"></param>
+            <param name="_json_att" value=""></param>
+            <param name="Referer" value="https://kyfw.12306.cn/otn/confirmPassenger/initDc"></param>
+        </paramList>
+        <parserList>
+            <parser storageKey="res_ticket_detail_passenger_info">
+            </parser>
+            <parser storageKey="res_ticket_detail_login_timeout_string">
+                <rule type="string_to_json"></rule>
+                <rule type="json_to_string" value="status"></rule>
+            </parser>
+        </parserList>
+        <result>
+            <resultKey>action_ticket_detail_init_4_init_get_passenger_info</resultKey>
             <nextActionKey>action_resign_verify_code</nextActionKey>
         </result>
     </action>
@@ -1396,6 +1460,31 @@
         </result>
     </action>
     
+    <action key="action_submit_order_step_1_a_check_real_passenger" isDismissDialog="N" resultType="string">
+        <paramList>
+            <param name="uri" value="/otn/passengers/realAdd"></param>
+            <param name="REPEAT_SUBMIT_TOKEN" key="res_ticket_detail_init_3_init_detail_page_submit_repeat_token"></param>
+            <param name="_json_att" value=""></param>
+            <param name="country_code" value="CN"></param>
+            <param name="passenger_id_type_code" key="key_ticket_detail_real_passenger_passenger_id_type_code"></param>
+            <param name="passenger_id_no" key="key_ticket_detail_real_passenger_passenger_id_no"></param>
+            <param name="passenger_name" key="key_ticket_detail_real_passenger_passenger_name"></param>
+            <param name="passenger_type" key="key_ticket_detail_real_passenger_passenger_type_code"></param>
+            
+        </paramList>
+        <parserList>
+            <parser storageKey="res_submit_order_step_1_a_check_real_passenger_result">
+            </parser>
+            <parser storageKey="res_submit_order_step_1_a_check_real_passenger_result_judge_if_need_delete">
+                <rule type="string_to_json"></rule>
+                <rule type="json_to_json" value="data"></rule>
+                <rule type="json_to_string" value="totalTimes"></rule>
+            </parser>
+        </parserList>
+        <result>
+            <resultKey>action_submit_order_step_1_a_check_real_passenger</resultKey>
+        </result>
+    </action>
     <action key="action_submit_order_step_1_check_rand_code" isShowDialog="Y" resultType="string">
         <paramList>
             <param name="uri" value="/otn/passcodeNew/checkRandCodeAnsyn"></param>
