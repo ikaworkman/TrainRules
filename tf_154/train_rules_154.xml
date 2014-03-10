@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rules>
 <config>
-    <configItem key="ika_rule_version" value="154_github"/>
+    <configItem key="ika_rule_version" value="154_gitHub"/>
     
 	<configItem key="bank_list_to_show" value="03080000,01050000"/>
     <configItem key="bank_list_bank_code_of_cmb" value="03080000"/>
@@ -62,8 +62,8 @@
     <configItem key="ccb_pay_success_remain_info_contain" value="以下是您的支付信息"/>
     <configItem key="cmb_pay_success_remain_info_contain" value="一步操作步骤已经通过短信发送到您的手"/>
     
-    <configItem key="train_finder_core_version" value="2"/>
-    <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_153/ika_core_153.jar"/>
+    <configItem key="train_finder_core_version" value="1"/>
+    <configItem key="train_finder_core_download_url" value="https://raw.github.com/ikaworkman/TrainRules/master/tf_154/ika_core_154.jar"/>
     
     <configItem key="order_list_completed_order_status_had_payed_order" value="已支付"/>
     <configItem key="order_list_completed_order_status_had_resign_order" value="改签票"/>
