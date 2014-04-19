@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data code="0">
-    <coreVersion>2</coreVersion> 
+    <coreVersion>1</coreVersion> 
     <coreJarUrl>https://raw.github.com/ikaworkman/TrainRules/master/tf_163/ika_core_163.jar</coreJarUrl>
 </data>
