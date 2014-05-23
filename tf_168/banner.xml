@@ -1,4 +1,4 @@
-<banners count="2">
+<banners count="1">
 <banner id="1"  linkType="1">
 	<title>出门</title>
 	<description>要出门?出门?</description>
@@ -6,6 +6,6 @@
 	<forwardUrl>http://192.168.3.103:8090/survey/html/homepage.html</forwardUrl>
 	<picHigh>44</picHigh>
 	<picWidth>320</picWidth>
-  <shareText>ddddddd</shareText>
+  <shareText>ddddddd   </shareText>
 </banner>
 </banners>
