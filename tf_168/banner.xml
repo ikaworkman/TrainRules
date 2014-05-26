@@ -3,7 +3,7 @@
 	<title>出门</title>
 	<description>要出门?出门?</description>
 	<bannerUrl>http:apps.ikamobile.cn/Public/images/banner20120903.jpg</bannerUrl>
-	<forwardUrl>http://192.168.3.103:8090/survey/html/homepage.html</forwardUrl>
+	<forwardUrl>http://192.168.2.80:8090/survey/html/homepage.html</forwardUrl>
 	<picHigh>44</picHigh>
 	<picWidth>320</picWidth>
   <shareText>ddddddd   </shareText>
