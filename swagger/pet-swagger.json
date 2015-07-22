@@ -157,7 +157,7 @@
               ],
               "default": "available"
             },
-            "collectionFormat": "csv"
+            "collectionFormat": "multi"
           }
         ],
         "responses": {
