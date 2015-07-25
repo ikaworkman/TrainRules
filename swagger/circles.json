@@ -1,0 +1,300 @@
+{
+  "apiVersion": "0.1",
+  "swaggerVersion": "1.2",
+  "resourcePath": "/circles",
+  "produces": [
+    "application/xml",
+    "application/json",
+    "application/octet-stream",
+    "text/plain"
+  ],
+  "apis": [
+    {
+      "path": "/api/circles.{format}",
+      "operations": [
+        {
+          "notes": "",
+          "summary": "创建圈子",
+          "nickname": "POST-api-circles---format-",
+          "method": "POST",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "access_token",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[name]",
+              "description": "圈子名",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[slogan]",
+              "description": "圈子口号",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[password]",
+              "description": "进入口令",
+              "type": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[passnumber]",
+              "description": "进入数字",
+              "type": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "circle[picture]",
+              "description": "圈子封面",
+              "type": "File",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "circle[member_profile_itmes]",
+              "description": null,
+              "type": "[String]",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "type": "void",
+          "consumes": [
+            "multipart/form-data"
+          ]
+        },
+        {
+          "notes": "",
+          "summary": "找圈子",
+          "nickname": "GET-api-circles---format-",
+          "method": "GET",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "password",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "passnumber",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "type": "void"
+        }
+      ]
+    },
+    {
+      "path": "/api/circles/{id}.{format}",
+      "operations": [
+        {
+          "notes": "",
+          "summary": "修改圈子",
+          "nickname": "PUT-api-circles--id---format-",
+          "method": "PUT",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "access_token",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[name]",
+              "description": "圈子名",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[slogan]",
+              "description": "圈子口号",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[password]",
+              "description": "进入口令",
+              "type": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "circle[passnumber]",
+              "description": "进入数字",
+              "type": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "circle[picture]",
+              "description": "圈子封面",
+              "type": "File",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "circle[member_profile_itmes]",
+              "description": null,
+              "type": "[String]",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "type": "void",
+          "consumes": [
+            "multipart/form-data"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/api/circles/{id}/join.{format}",
+      "operations": [
+        {
+          "notes": "",
+          "summary": "申请加入圈子",
+          "nickname": "PUT-api-circles--id-join---format-",
+          "method": "PUT",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "password",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "form",
+              "name": "passnumber",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "type": "void"
+        }
+      ]
+    },
+    {
+      "path": "/api/circles/{id}/pending_members.{format}",
+      "operations": [
+        {
+          "notes": "",
+          "summary": "待审核申请",
+          "nickname": "GET-api-circles--id-pending_members---format-",
+          "method": "GET",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": null,
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "type": "void"
+        }
+      ]
+    }
+  ],
+  "basePath": "http://localhost:3000",
+  "models": {
+    "User": {
+      "id": "User",
+      "properties": {
+        "mobile_number": {
+          "type": "string",
+          "description": "手机号码"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "name": {
+          "type": "string",
+          "description": "姓名"
+        },
+        "gender": {
+          "$ref": "Symbol",
+          "description": "性别",
+          "enum": [
+            "male",
+            "female"
+          ]
+        },
+        "birthday": {
+          "$ref": "Date",
+          "description": "生日"
+        },
+        "picture": {
+          "type": "string",
+          "description": "头像"
+        }
+      },
+      "required": [
+        "mobile_number",
+        "password",
+        "name",
+        "gender",
+        "birthday",
+        "picture"
+      ]
+    },
+    "Circle": {
+      "id": "Circle",
+      "properties": {}
+    }
+  }
+}
